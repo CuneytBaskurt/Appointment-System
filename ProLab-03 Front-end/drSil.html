@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doktor Sil</title>
+    <link rel="stylesheet" href="drSil.css">
+</head>
+<body>
+
+    <div class="container">
+		
+		<h1>Doktor Sil</h1>
+		<div class="sign-up">
+			
+			
+			<form action="">
+				<div >
+					<div class="combobox-container">
+						<select class="combobox" id="doctorComboBox"></select>
+				
+				<div class="check">
+
+</select>
+			
+			<button onclick="sil()" class="ekle-button">Seçili Doktoru Sil</button>
+
+			</form>
+					
+		
+			
+		</div>
+		
+	</div>
+    
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.querySelector('form');
+			
+			form.addEventListener('submit', function (event) {
+				event.preventDefault(); // Formun varsayılan submit işlemini engelle
+				const tc = document.querySelector('#doctorComboBox').value;
+				
+	
+				fetch('/api/sil', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({tc})
+				})
+				.then(response => response.json())
+				.then(data => {
+					console.log('Silme sonucu:', data);
+					if (data.success) {
+						alert('Silme İşlemi Başarılı!');
+						window.location.reload(); // Sayfayı yenile
+					} else {
+						alert('Silme İşlemi başarısız: ' + data.message);
+					}
+				})
+				.catch(error => {
+					console.error('Hata:', error);
+					alert('Bir hata oluştu!');
+				});
+			});
+		});
+	</script>
+
+
+</body>
+</html>

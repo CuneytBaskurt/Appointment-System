@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geçmiş Randevular</title>
+    <link rel="stylesheet" href="gecmis.css">
+</head>
+<body>
+    <h1>Geçmiş Randevularınız</h1>
+    <div class="container">
+        <!-- readonly özelliği eklenmiş textarea -->
+        <textarea class="textbox" rows="10" readonly>Geçmiş Randevu Bilgileri...</textarea>
+        <button onclick="gecmisRandevuGetir()" id="raporButon">Randevuları Getir</button>
+    </div>
+
+    <script>
+         function gecmisRandevuGetir() {
+           
+           fetch(`http://localhost:4555/gecmisRandevuGetir`)
+               .then(response => response.text())
+               .then(data => {
+                   document.querySelector('.textbox').value = data;
+               })
+               .catch(error => console.error('Hata:', error));
+       }
+    </script>
+</body>
+</html>

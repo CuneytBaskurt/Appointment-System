@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rapor</title>
+    <link rel="stylesheet" href="rapor.css">
+</head>
+<body>
+    <h1>Tıbbi Rapor</h1>
+    <div class="container">
+
+        <div class="combobox-container">
+            <select class="combobox" id="hastaComboBox">
+                
+                
+            </select>
+        </div>
+
+        <textarea id="textbox" class="textbox" rows="10" >Rapor Bilgileri...</textarea>
+        <div class="button-container">
+            <button onclick="raporu_goruntule()" id="button1">Raporu Görüntüle</button>
+            <button onclick="rapor_guncelle()" id="button2">Raporu Güncelle</button>
+            <button onclick="rapor_indir()" id="button3">Raporu Yükle</button>
+        </div>
+    </div>
+
+    <script>
+        function raporu_goruntule() {
+            var hastaTC = document.getElementById('hastaComboBox').value;
+            fetch(`http://localhost:4500/doktor?tc=${hastaTC}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.textbox').value = data;
+                })
+                .catch(error => console.error('Hata:', error));
+        }
+
+        function rapor_guncelle() {
+    var hastaTC = document.getElementById('hastaComboBox').value;
+    var icerik = document.getElementById('textbox').value;
+    console.log('Gönderilen TC:', hastaTC);
+    console.log('Gönderilen İçerik:', icerik);
+
+    fetch(`http://localhost:4500/guncelle`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ tc: hastaTC, rapor: icerik })
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log('Sunucudan Gelen Yanıt:', data);
+        document.querySelector('.textbox').value = data;
+    })
+    .catch(error => console.error('Hata:', error.message));
+}
+        
+
+        </script>
+    
+
+
+</body>
+</html>

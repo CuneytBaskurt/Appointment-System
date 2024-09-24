@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Doktor Güncelle</title>
+
+    <link rel="stylesheet" href="drGuncelle.css">
+
+	
+
+</head>
+<body>
+	<div class="container">
+		
+		<h1>Doktor Güncelleme</h1>
+		<div class="sign-up">
+			
+			
+			<form action="">
+				<div >
+					<div class="combobox-container">
+						<select class="combobox" id="doctorComboBox">
+							
+							
+						</select>
+				<input id="tc" class="TC textbox" oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 11)" placeholder="Tc Kimlik Numarası" type="text" required>
+                <input id="isim" class="textbox" onfocus="this.value=''"type="text" placeholder="İsim" required>
+				<input id="soyisim" class="textbox" onfocus="this.value=''"type="text" placeholder="Soyisim" required>
+                <input id="unvan" class="textbox" onfocus="this.value=''"type="text" placeholder="Doktor Unvanı" required>
+				
+				<div class="check">
+
+</select>
+
+				<input id="password" class="textbox" onfocus="this.value=''" type="text" placeholder="Parola" required>
+							<input id="confirm_password" class="textbox" onfocus="this.value=''" type="text" placeholder="Parola Tekrar" required>
+							
+							<button onclick="guncelle()" class="ekle-button">Güncelle</button>
+
+
+	
+			</form>
+					
+		
+			
+		</div>
+		
+	</div>
+
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.querySelector('form');
+			
+			form.addEventListener('submit', function (event) {
+				event.preventDefault(); // Formun varsayılan submit işlemini engelle
+				const tc = document.querySelector('#doctorComboBox').value;
+				const isim = document.querySelector('#isim').value;
+				const soyisim = document.querySelector('#soyisim').value;
+				const unvan = document.querySelector('#unvan').value;
+				const password = document.querySelector('#password').value;
+				const confirm_password = document.querySelector('#confirm_password').value;
+	
+				fetch('/api/guncelle', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({ tc, isim, soyisim, unvan, password, confirm_password })
+				})
+				.then(response => response.json())
+				.then(data => {
+					console.log('Güncelleme sonucu:', data);
+					if (data.success) {
+						alert('Güncelleme başarılı!');
+						window.location.reload(); // Sayfayı yenile
+					} else {
+						alert('Güncelleme başarısız: ' + data.message);
+					}
+				})
+				.catch(error => {
+					console.error('Hata:', error);
+					alert('Bir hata oluştu!');
+				});
+			});
+		});
+	</script>
+	
+	
+		
+</body>
+</html>

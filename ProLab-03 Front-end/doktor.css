@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 5px;
+    margin-top: 100px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.combobox-container {
+    margin-bottom: 20px;
+}
+
+.combobox {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    outline: none;
+}
+
+.textbox {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container a {
+    text-decoration: none;
+}
+
+button {
+    margin-right: 2px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #f2f2f2 !important;
+	background-color: #ff0000a7;
+	color: white !important;
+}
+
+button:hover {
+    background-color: #b30000e4;
+}
+
+.h_guncelle-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.h_guncelle-container a {
+    text-decoration: none;
+}
+
+.h_guncelle {
+    margin-right: 2px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 1000px;
+    border: 1px solid #f2f2f2 !important;
+	background-color: #ff0000a7;
+	color: white !important;
+}
+
+.h_guncelle:hover {
+    background-color: #b30000e4;
+}

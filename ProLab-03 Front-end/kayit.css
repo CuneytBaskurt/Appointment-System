@@ -1,0 +1,100 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial, sans-serif;	
+	
+}
+body{
+	
+background-color: #f4f4f4;
+	
+
+
+}
+h1{	
+font-size: 20px;
+	color: #000000;
+	text-align: center;
+	font-family: Arial, sans-serif;
+}
+.container{
+	
+	width: 1000px;
+	margin: 0 auto;
+	margin-top: 32px;
+}
+.sign-up{
+  margin:10px auto 50px auto;
+	width: 50%;
+    border-radius: 8px;
+    background-color: #fff;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	padding: 10px;
+}
+form{
+	    padding: 10px;
+	
+}
+.textbox{
+	width: 95%;
+	display: inline-block;
+	padding: 10px;
+	margin-top: 12px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background-color: white;
+outline: none;
+}
+::placeholder{ 
+  color: black;
+  opacity: 0.8; 
+}
+.check{
+	margin-top: 3px;
+	
+}
+.check div{
+	display: inline-block;
+	margin-left: 1px;
+	outline: none;
+}
+#cevap{
+	width: 260px;
+	display: inline-block;
+}
+.cns{
+	float: right;
+	line-height: 22px;
+	margin-left: 5px;
+}
+select{
+	
+	width: 40%;
+	display: inline-block;
+	padding: 9px;
+	margin-top: 10px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	background-color: white;
+	outline: none;
+}
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    outline: none;
+	width: 100%;
+	display: block;
+	padding: 15px;
+	margin-top: 12px;
+	border-radius: 5px;
+	border: 1px solid #f2f2f2 !important;
+	background-color: #ff0000a7;
+	color: white !important;
+}
+
+button:hover {
+    background-color: #b30000e4;
+}
+

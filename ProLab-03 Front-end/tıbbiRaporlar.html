@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasta Geçmişi</title>
+    <link rel="stylesheet" href="tıbbiRaporlar.css">
+</head>
+<body>
+    <h1>Tıbbı Raporlarım</h1>
+    <div class="container">
+        
+        <textarea  class="textbox" rows="10">Rapor Bilgileri</textarea>
+        <div class="button-container">
+            <button id="button2">Raporu Yükle</button>
+            
+        </div>
+        <button onclick="raporlar()" id="raporButon">Raporları Getir</button>
+    </div>
+
+    <script>
+         function raporlar() {
+            
+            fetch(`http://localhost:2550/raporlar`)
+                .then(response => response.text())
+                .then(data => {
+                    document.querySelector('.textbox').value = data;
+                })
+                .catch(error => console.error('Hata:', error));
+        }
+    </script>
+   
+
+</body>
+</html>

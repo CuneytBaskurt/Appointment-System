@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doktor</title>
+    <link rel="stylesheet" href="doktor.css">
+</head>
+<body>
+    <h1>Doktor Paneli</h1>
+    <div class="container">
+        <form action="">
+        <div class="combobox-container">
+            <select class="combobox" id="hastaComboBox">
+                
+                
+            </select>
+        </div>
+        <input id="ad" class="textbox" onfocus="this.value=''"type="text" placeholder="Hasta Adı" required>
+        <input id="soyad" class="textbox" onfocus="this.value=''"type="text" placeholder="Hasta Soyadı" required>
+        <input id="telefon" class="textbox" onfocus="this.value=''"type="text" placeholder="Hasta Telefon Numarası" required>
+        <input id="boy" class="textbox" onfocus="this.value=''"type="text" placeholder="Boy" required>
+        <input id="kilo" class="textbox" onfocus="this.value=''"type="text" placeholder="Kilo" required>
+        <div class="button-container">
+			
+            <button onclick="h_guncelle()" id="button1" class="h_guncelle">Hasta Bilgileri Güncelle</button>
+
+            
+
+        </form>
+
+        
+        
+        </div>
+        <a href="http://localhost:4500"><button id="button2">Tıbbi Rapor Görüntüle</button></a>
+
+            <a href="http://localhost:1500/"><button id="button3">Hasta Geçmişi Görüntüle</button></a>
+    </div>
+
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const form = document.querySelector('form');
+			
+			form.addEventListener('submit', function (event) {
+				event.preventDefault(); // Formun varsayılan submit işlemini engelle
+				const tc = document.querySelector('#hastaComboBox').value;
+				const isim = document.querySelector('#ad').value;
+				const soyisim = document.querySelector('#soyad').value;
+				const telefon = document.querySelector('#telefon').value;
+				const boy = document.querySelector('#boy').value;
+                const kilo = document.querySelector('#kilo').value;
+	
+				fetch('/api/h_guncelle', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({ tc, isim, soyisim, telefon, boy, kilo })
+				})
+				.then(response => response.json())
+				.then(data => {
+					console.log('Güncelleme sonucu:', data);
+					if (data.success) {
+						alert('Güncelleme başarılı!');
+						window.location.reload(); // Sayfayı yenile
+					} else {
+						alert('Güncelleme başarısız: ' + data.message);
+					}
+				})
+				.catch(error => {
+					console.error('Hata:', error);
+					alert('Bir hata oluştu!');
+				});
+			});
+		});
+	</script>
+
+
+
+</body>
+</html>

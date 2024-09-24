@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+h1{	
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 0px;
+    color: #000000;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    }
+.container {
+    max-width: 800px;
+    max-height: 1000px;
+    height: 600px;
+    margin: 50px auto;
+    margin-top: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.textbox {
+    width: 100%;
+    height: 53%;
+    padding: 10px;
+    margin-bottom: 0px; /* Textbox ile butonlar arasındaki boşluğu ayarlar */
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: none;
+    outline: none;
+}
+
+.button-container {
+    margin-top: 20px;
+}
+
+button {
+    width: 100%;
+    display: block;
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #f2f2f2 !important;
+    background-color: #ff0000a7;
+    color: white !important;
+}
+
+button:hover {
+    background-color: #b30000e4;
+}
+
+a {
+    text-decoration: none;
+    color: #ff0000a7;
+}
+
+.combobox-container {
+    margin-bottom: 20px;
+}
+
+.combobox {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    outline: none;
+}

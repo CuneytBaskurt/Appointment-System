@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ana Ekran</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="randevuAl.css">
+</head>
+<body>
+    <div class="container">
+        
+        <h1 class="head">Hastane Randevu Arama Sistemi</h1>
+    
+        <form id="randevuForm">
+        
+            <div class="row form-group">
+                <div class="col-3">
+                    <h6>Şehir:</h6>
+                     
+                    <select id="sehir" name="Sehir" class="form-control" required>
+                        <option value="0">Şehir</option>
+                        <option value="Adana">Adana</option>
+                        <option value="Adıyaman">Adıyaman</option>
+                        <option value="Antalya">Antalya</option>
+                        <option value="Artvin">Artvin</option>
+                        <option value="Aydın">Aydın</option>
+                        <option value="Kocaeli">Kocaeli</option>
+                        <option value="Muş">Muş</option>
+                        <option value="Ardahan">Ardahan</option>
+                        <option value="Osmaniye">Osmaniye</option>
+                        <option value="Düzce">Düzce</option>
+                    </select>
+                </div>
+                
+                <div class="col-3">
+                    <h6>İlçe:</h6>
+                    <select id="ilce" name="Ilce" class="form-control" required>
+                        <option value="0"> İlçe / Kasaba </option>
+                        <option value="Merkez İlçe">Merkez İlçe</option>
+                        <option value="Kasaba">Kasaba</option>
+                    </select>  
+                </div>
+                
+                <div class="col-6">
+                    <h6>Hastane:</h6>
+                    <select id="hastane" name="Hastane" class="form-control" required>
+                        <option value="0"> Hastaneler </option>
+                        <option value="Şehir Hastanesi">Şehir Hastanesi</option>
+                        <option value="Devlet Hastanesi">Devlet Hastanesi</option>
+                    </select>  
+                </div>
+            </div>
+            
+            <div class="row form-group">
+                <div class="col-4">
+                    <h6>Poliklinik:</h6>
+                    <select id="poliklinik" name="Poliklinik" class="form-control" required>
+                        <option value="0"> Poliklinik </option>
+                        <option value="Poliklinik 1">Poliklinik 1</option>
+                        <option value="Poliklinik 2">Poliklinik 2</option>
+                        <option value="Poliklinik 3">Poliklinik 3</option>
+                        <option value="Poliklinik 4">Poliklinik 4</option>
+                        <option value="Poliklinik 5">Poliklinik 5</option>
+                        <option value="Poliklinik 6">Poliklinik 6</option>
+                        <option value="Poliklinik 7">Poliklinik 7</option>
+                    </select>  
+                </div>
+                
+                <div class="col-4">
+                    <h6 class="ml-3">Doktor:</h6>
+                    <select id="doktor" name="doktor" class="doktor-list form-control" required>
+                        <option value="0">Doktor</option>
+                    </ select>
+                </div>
+                
+                <div class="col-4">
+                    <h6>Tarih:</h6>
+                    <input id="tarih" type="date" class="tarih-list form-control" name="bday">
+                </div>
+            </div>
+
+
+            <div class="row form-group">
+              <div class="col-12">
+                  <h6 class="mt-3">Saatler:</h6>
+              </div>
+          
+                
+                <div class="col-4">
+                    <h6>09:00-16:00</h6>
+                    <select id="saat" name="saat" class="form-control" required>
+                        <option value="0">Saatler </option>
+                        <option value="09:00">09:00</option>
+                        <option value="09:10">09:10</option>
+                        <option value="09:20">09:20</option>
+                        <option value="09:30">09:30</option>
+                        <option value="09:40">09:40</option>
+                        <option value="09:50">09:50</option>
+                        <option value="10:00">10:00</option>
+                        <option value="10:10">10:10</option>
+                        <option value="10:20">10:20</option>
+                        <option value="10:30">10:30</option>
+                        <option value="10:40">10:40</option>
+                        <option value="10:50">10:50</option>
+                        <option value="11:00">11:00</option>
+                        <option value="11:10">11:10</option>
+                        <option value="11:20">11:20</option>
+                        <option value="11:30">11:30</option>
+                        <option value="11:40">11:40</option>
+                        <option value="11:50">11:50</option>
+                        <option value="12:00">12:00</option>
+                        <option value="12:10">12:10</option>
+                        <option value="12:20">12:20</option>
+                        <option value="12:30">12:30</option>
+                        <option value="12:40">12:40</option>
+                        <option value="12:50">12:50</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:10">14:10</option>
+                        <option value="14:20">14:20</option>
+                        <option value="14:30">14:30</option>
+                        <option value="14:40">14:40</option>
+                        <option value="14:50">14:50</option>
+                        <option value="15:00">15:00</option>
+                        <option value="15:10">15:10</option>
+                        <option value="15:20">15:20</option>
+                        <option value="15:30">15:30</option>
+                        <option value="15:40">15:40</option>
+                        <option value="15:50">15:50</option>
+
+                    </select>  
+                </div>
+
+                <div class="col-12">
+                  <button class="ekle-button" type="submit" onclick="randevual()">Randevu Al</button>
+                </div>
+                
+            </div>
+        </form>
+    </div>
+
+
+    <script>
+      
+      
+
+      function randevual() {
+        
+
+        var sehir = document.getElementById('sehir').value;
+        var ilce = document.getElementById('ilce').value;
+        var hastane = document.getElementById('hastane').value;
+        var poliklinik = document.getElementById('poliklinik').value;
+        var doktor = document.getElementById('doktor').value;
+        var tarih = document.getElementById('tarih').value; 
+        var saat = document.getElementById('saat').value;
+        
+        
+        
+        
+        
+  fetch(`http://localhost:1550/randevual`, {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ sehir : sehir , ilce : ilce , hastane : hastane , poliklinik : poliklinik , doktor : doktor , tarih : tarih , saat : saat })
+  })
+  .then(response => response.text())
+  .then(data => {
+      console.log('Sunucudan Gelen Yanıt:', data);
+      alert('Randevu başarılı!');
+						window.location.reload(); // Sayfayı yenile
+      document.querySelector('.textbox').value = data;
+      
+  })
+  .catch(error => console.error('Hata:', error.message));
+}
+      
+
+      </script>
+
+
+
+    
+</body>
+</html>

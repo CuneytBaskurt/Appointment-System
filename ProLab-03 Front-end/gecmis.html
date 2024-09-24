@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasta Geçmişi</title>
+    <link rel="stylesheet" href="gecmis.css">
+</head>
+<body>
+    <h1>Hasta Geçmişi</h1>
+    <div class="container">
+
+        <div class="combobox-container">
+            <select class="combobox" id="hastaComboBox">
+                
+                
+            </select>
+        </div>
+
+        <textarea id="textarea" class="textbox" rows="10">Geçmiş Bilgiler...</textarea>
+        <button onclick="gecmis_bilgi()" id="button1" class="h_guncelle">Geçmiş Bilgileri Göster</button>
+    </div>
+
+    <script>
+
+function gecmis_bilgi() {
+    var hastaTC = document.getElementById('hastaComboBox').value;
+    fetch(`http://localhost:1500/gecmis_bilgi?tc=${hastaTC}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('textarea').value = `TC: ${data.hasta_tc}\nAd: ${data.hasta_ad}\nSoyad: ${data.hasta_soyad}\nMail: ${data.hasta_email}\nTel: ${data.hasta_tel}\nBoy: ${data.hasta_boy}\nKilo: ${data.hasta_kilo}`;
+        })
+        .catch(error => console.error('Hata:', error));
+}
+
+
+
+    </script>
+
+</body>
+</html>
